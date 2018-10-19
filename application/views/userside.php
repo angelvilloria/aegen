@@ -161,7 +161,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="form-group col-lg-4">
 			  <label for="questiontype">Question Type:</label>
 			  <select class="form-control" id="questiontype">
-				<option>Matching Type</option>
+				<option>Multiple Choice</option>
 				<option>Identification</option>
 				<option>Enumeration</option>
 				<option>True or False</option>
