@@ -261,9 +261,9 @@
 								
 								<?php
 								
-								if($displaydata->num_rows() > 0)
+								if($userdata->num_rows() > 0)
 								{
-									foreach($displaydata->result() as $row)
+									foreach($userdata->result() as $row)
 									{
 								?>
 									<tbody>
@@ -332,30 +332,30 @@
 
 						
 						<div class="col-md-2">
-							<label for="LName"><b>CSID</b></label>
+							<label for="CSID"><b>CSID</b></label>
 						</div>
 						<div class="col-md-5">
 							<input type="text" placeholder="Enter CSID" name="CSID" required>
 						</div>
 						<div class="col-md-12"><br /></div>
-<div class="row">
-<div class="col-lg-8"></div>
-<div class="col-lg-4">
-<button type="button" class="add_field_button btn">Add Chapter</button> &nbsp &nbsp  &nbsp <button type="button" class="remove_field_button btn">Remove Chapter</button>
-</div>
-</div>
-<div class="input_fields_wrap">
-	<div class="row">
+						<div class="row">
+						<div class="col-lg-8"></div>
+						<div class="col-lg-4">
+						<button type="button" class="add_field_button btn">Add Chapter</button> &nbsp &nbsp  &nbsp <button type="button" class="remove_field_button btn">Remove Chapter</button>
+						</div>
+						</div>
+						<div class="input_fields_wrap">
+							<div class="row">
 						<div class="col-md-12"><br /></div>
 						<div class="col-md-2">
-							<label for="LName"><b>Chapter No.</b></label>
+							<label for="CNum"><b>Chapter No.</b></label>
 						</div>
 						<div class="col-md-1">
 							<input type="text" placeholder="Enter Chapter Number" name="CNum" required>
 						</div>
 						
 						<div class="col-md-2">
-							<label for="LName"><b>Chapter Name</b></label>
+							<label for="CName"><b>Chapter Name</b></label>
 						</div>
 						<div class="col-md-7">
 
@@ -371,10 +371,10 @@
 						<div class="col-md-12"><br /></div>
 						<div class="col-md-1"></div>
 						<div class="col-md-1">
-							<label for="LName"><b>Topic No.</b></label>
+							<label for="TNum"><b>Topic No.</b></label>
 						</div>
 						<div class="col-md-1">
-							<input type="text" placeholder="Enter Topic No." name="TName" required>
+							<input type="text" placeholder="Enter Topic No." name="TNum" required>
 						</div>
 						<div class="col-md-2">
 
@@ -393,13 +393,13 @@
 						<div class="col-md-1">
 							<input type="text" placeholder="Enter Hours" name="Hours" required>
 						</div>
-</div>
-</div>
-</div>
-<br />
-<button type="submit" class="btn">Add Course Syllabus</button></form>
-</div>
-
+					</div>
+					</div>
+					<br />
+					<button type="submit" class="btn" name="addCourseSyllabus">Add Course Syllabus</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -434,43 +434,39 @@
 								<tr>
 									<th>CSID</th>
 									<th>CS Title</th>
-									<th>Date Created</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							
+							
+							
+							<?php
+								
+								if($csdata->num_rows() > 0)
+								{
+									foreach($csdata->result() as $row)
+									{
+								?>
+								
 							<tbody>
 								<tr class='clickable-row' >
-									<td>CS101</td>
-									<td>IT Fundamental</td>
-									<td>10/15/2018</td>
-									<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-								</tr>
-								<tr class='clickable-row' >
-									<td>CS101</td>
-									<td>IT Fundamental</td>
-									<td>10/15/2018</td>
-									<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-								</tr>
-								<tr class='clickable-row' >
-									<td>CS101</td>
-									<td>IT Fundamental</td>
-									<td>10/15/2018</td>
-									<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-								</tr>
-								<tr class='clickable-row' >
-									<td>CS101</td>
-									<td>IT Fundamental</td>
-									<td>10/15/2018</td>
-									<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-								</tr>
-								<tr class='clickable-row' >
-									<td>CS101</td>
-									<td>IT Fundamental</td>
-									<td>10/15/2018</td>
+									<td><?php echo $row->CSID; ?></td>
+									<td><?php echo $row->CSID; ?></td>
 									<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
 								</tr>
 							</tbody>
+							<?php	
+									}
+								}
+								else
+								{
+								?>
+									<tr>
+										<td colspan="3"> No Data Found </td>
+									</tr>
+								<?php
+								}
+								?>
 							</table>
       
     
