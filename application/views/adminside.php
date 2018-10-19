@@ -147,10 +147,10 @@
 						<div class="col-md-2">
 							<label for="FacultyID"><b>Faculty ID: </b></label>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-4">
 							
 							<input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" value="<?php echo set_value('FacultyID'); ?>">
-							<?php echo form_error('FacultyID'); ?>
+							<div style="color:red;"><?php echo form_error('FacultyID'); ?></div>
 							
 						</div>
 						<div class="col-md-8"></div>
@@ -159,10 +159,10 @@
 							<label for="LName"><b>Last Name</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 							
 							<input type="text" placeholder="Enter Last Name" name="LName" value="<?php echo set_value('LName'); ?>">
-							<?php echo form_error('LName'); ?>
+							<div style="color:red;"><?php echo form_error('LName'); ?></div>
 							
 
 						</div>
@@ -170,10 +170,10 @@
 							<label for="FName"><b>First Name</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 						
 							<input type="text" placeholder="Enter First Name" name="FName" value="<?php echo set_value('FName'); ?>">
-							<?php echo form_error('FName'); ?>
+							<div style="color:red;"><?php echo form_error('FName'); ?></div>
 							
 
 						</div>
@@ -182,10 +182,10 @@
 							<label for="password"><b>Password</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 						
 							<input type="password" placeholder="Enter Password" name="password" value="<?php echo set_value('password'); ?>">
-							<?php echo form_error('password'); ?>
+							<div style="color:red;"><?php echo form_error('password'); ?></div>
 						
 
 						</div>
@@ -193,10 +193,10 @@
 							<label for="password2"><b>Confirm Password</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 						
 							<input type="password" placeholder="Confirm Password" name="password2" value="<?php echo set_value('password2'); ?>">
-							<?php echo form_error('password2'); ?>
+							<div style="color:red;"><?php echo form_error('password2'); ?></div>
 						
 
 						</div>
@@ -205,10 +205,10 @@
 							<label for="college"><b>College</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 						
 							<input type="text" placeholder="Enter College" name="college" value="<?php echo set_value('college'); ?>">
-							<?php echo form_error('college'); ?>
+							<div style="color:red;"><?php echo form_error('college'); ?></div>
 							
 
 						</div>
@@ -216,11 +216,11 @@
 							<label for="Department"><b>Department</b></label>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-4">
 
 						
 							<input type="text" placeholder="Enter Department" name="department" value="<?php echo set_value('department'); ?>">
-							<?php echo form_error('department'); ?>
+							<div style="color:red;"><?php echo form_error('department'); ?></div>
 							
 						</div>
 					</div>
