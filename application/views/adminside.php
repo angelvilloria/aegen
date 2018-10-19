@@ -307,8 +307,10 @@
           </div>
         </div>
 
+
 	<!-- This is where you add course syllabus -->
 	
+
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
       <div class="portfolio-modal-dialog bg-white">
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
@@ -342,6 +344,7 @@
 							<label for="CName"><b>Chapter Name</b></label>
 						</div>
 						
+
 						<div class="col-md-10">
 							<input type="text" placeholder="Enter Chapter Name" name="CName" required>
 						</div>
@@ -355,6 +358,7 @@
 						<div class="col-md-12"><br /></div>
 						<div class="col-md-2"></div>
 						<div class="col-md-2">
+
 							<label for="TName"><b>Topic Name</b></label>
 						</div>
 						
@@ -362,6 +366,7 @@
 							<input type="text" placeholder="Enter Topic Name" name="TName" required>
 						</div>
 						<div class="col-md-2">
+
 							<label for="Hours"><b>Topic Hours</b></label>
 						</div>
 						
@@ -383,6 +388,7 @@
 
   <!-- This is where you display course syllabus -->
   
+
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
       <div class="portfolio-modal-dialog bg-white">
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
@@ -394,9 +400,11 @@
               <h2 class="text-secondary text-uppercase mb-0">Display Course Syllabus</h2>
 			  <hr class="star-dark mb-5">
             </div>
+
 			<div class="col-lg-12" style="font-family: Montserrat;">
 			
 			<!-- List of Course Syllabus -->
+
 			<section id="portfolio">
 				<div class="container">
 					<div class="row">
@@ -522,14 +530,10 @@ $(remove_button_topic).click(function(e){
     if(total_fields>1){
         wrapper[0].childNodes[total_fields-1].remove();
     }
+
 });
 
 </script>
 </body>
 
-  
-
-
- 
-  
 </html>
