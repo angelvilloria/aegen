@@ -7,6 +7,7 @@
         <hr class="star-light">
         <h2 class="font-weight-light mb-0" style="font-family: Montserrat;">AUTOMATED EXAM GENERATOR</h2>
       </div>
+	  
     </header>
 
     <!-- Portfolio Grid Section -->
@@ -22,7 +23,9 @@
                   <h2>Add Users</h2>
                 </div>
               </div>
-              <img class="img-fluid" src="bootstrap/img/portfolio/cabin.png" alt="">
+
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+              
             </a>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -32,7 +35,9 @@
                   <h2>Display Users</h2>
                 </div>
               </div>
-              <img class="img-fluid" src="bootstrap/img/portfolio/cake.png" alt="">
+
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+
             </a>
           </div>
         </div>
@@ -51,7 +56,9 @@
                   <h2>Add Course Syllabus</h2>
                 </div>
               </div>
-              <img class="img-fluid" src="bootstrap/img/portfolio/cabin.png" alt="">
+
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+
             </a>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -61,7 +68,9 @@
                   <h2>Edit/Display Course Syllabus</h2>
                 </div>
               </div>
-              <img class="img-fluid" src="bootstrap/img/portfolio/cake.png" alt="">
+
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+
             </a>
           </div>
         </div>
@@ -130,18 +139,15 @@
 			<?php
 			} ?>
 			
-
-			
-			
 			<form method="POST" action="" class="container" style="font-family: Montserrat;">
 			<div class="row">
 						<div class="col-md-2">
 							<label for="FacultyID"><b>Faculty ID: </b></label>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-4">
 							
 							<input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" value="<?php echo set_value('FacultyID'); ?>">
-							<?php echo form_error('FacultyID'); ?>
+							<div style="color:red;"><?php echo form_error('FacultyID'); ?></div>
 							
 						</div>
 						<div class="col-md-8"></div>
@@ -149,57 +155,69 @@
 						<div class="col-md-2">
 							<label for="LName"><b>Last Name</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
 							
 							<input type="text" placeholder="Enter Last Name" name="LName" value="<?php echo set_value('LName'); ?>">
-							<?php echo form_error('LName'); ?>
+							<div style="color:red;"><?php echo form_error('LName'); ?></div>
 							
+
 						</div>
 						<div class="col-md-2">
 							<label for="FName"><b>First Name</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
 						
 							<input type="text" placeholder="Enter First Name" name="FName" value="<?php echo set_value('FName'); ?>">
-							<?php echo form_error('FName'); ?>
+							<div style="color:red;"><?php echo form_error('FName'); ?></div>
 							
+
 						</div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
 							<label for="password"><b>Password</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
 						
 							<input type="password" placeholder="Enter Password" name="password" value="<?php echo set_value('password'); ?>">
-							<?php echo form_error('password'); ?>
+							<div style="color:red;"><?php echo form_error('password'); ?></div>
 						
+
 						</div>
 						<div class="col-md-2">
 							<label for="password2"><b>Confirm Password</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
 						
 							<input type="password" placeholder="Confirm Password" name="password2" value="<?php echo set_value('password2'); ?>">
-							<?php echo form_error('password2'); ?>
+							<div style="color:red;"><?php echo form_error('password2'); ?></div>
 						
+
 						</div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
 							<label for="college"><b>College</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
 						
 							<input type="text" placeholder="Enter College" name="college" value="<?php echo set_value('college'); ?>">
-							<?php echo form_error('college'); ?>
+							<div style="color:red;"><?php echo form_error('college'); ?></div>
 							
+
 						</div>
 						<div class="col-md-2">
 							<label for="Department"><b>Department</b></label>
 						</div>
-						<div class="col-md-2">
+
+						<div class="col-md-4">
+
 						
 							<input type="text" placeholder="Enter Department" name="department" value="<?php echo set_value('department'); ?>">
-							<?php echo form_error('department'); ?>
+							<div style="color:red;"><?php echo form_error('department'); ?></div>
 							
 						</div>
 					</div>
@@ -238,6 +256,7 @@
 									<th>Password</th>
 									<th>College</th>
 									<th>Department</th>
+									<th>Action</th>
 								</tr>
 								
 								<?php
@@ -254,6 +273,7 @@
 										<td><?php echo $row->Password; ?></td>
 										<td><?php echo $row->College; ?></td>
 										<td><?php echo $row->Department; ?></td>
+										<td><a href="">Delete</a></td>
 									</tr>
 									</tbody>
 								<?php	
@@ -287,7 +307,8 @@
           </div>
         </div>
 
-		    <!-- Portfolio Modal 3 -->
+	<!-- This is where you add course syllabus -->
+	
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
       <div class="portfolio-modal-dialog bg-white">
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
@@ -300,81 +321,68 @@
 			  <hr class="star-dark mb-5">
             </div>
 			
-			<form action="/action_page.php" class="container" style="font-family: Montserrat;">
-			<div class="row">
+						<?php if (isset($_SESSION['success'])) { ?>
+						<div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
+						<?php
+						} ?>
+						
+						<form method="POST" action="" class="container" style="font-family: Montserrat;">
+						<div class="row">
+						<div class="col-lg-8"></div>
+						<div class="col-lg-4">
+						<button type="button" class="add_field_button btn">Add Chapter</button> &nbsp &nbsp  &nbsp <button type="button" class="remove_field_button btn">Remove Chapter</button>
+						</div>
+						</div>
+						
+						<div class="input_fields_wrap">
+							<div class="row">
+							
+						<div class="col-md-12"><br /></div>
 						<div class="col-md-2">
-							<label for="email"><b>CSID: </b></label>
+							<label for="CName"><b>Chapter Name</b></label>
 						</div>
-						<div class="col-md-2">
-							<input type="text" placeholder="Enter Course Syllabus ID" name="email" required>
+						
+						<div class="col-md-10">
+							<input type="text" placeholder="Enter Chapter Name" name="CName" required>
 						</div>
-						<div class="col-md-2">
-							<label for="email"><b>CS Title: </b></label>
+						<div class="col-md-12"><br /></div>
+						
+						<div class="col-lg-8"></div>
+						<div class="col-lg-4">
+						<button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button>
 						</div>
-						<div class="col-md-4">
-							<input type="text" placeholder="Enter Course Syllabus Title" name="email" required>
-						</div>
+
+						<div class="col-md-12"><br /></div>
 						<div class="col-md-2"></div>
-						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
-							<label for="email"><b>No. of Chapter/s</b></label>
+							<label for="TName"><b>Topic Name</b></label>
 						</div>
-						<div class="col-md-2">
-							<input type="text" placeholder="Enter Number of Chapter/s" name="email" required>
-						</div><div class="col-md-8"></div>
-						<div class="col-md-12"> <br /></div>
 						
-						<div class="col-md-2">
-							<label for="email"><b>Chapter No.</b></label>
+						<div class="col-md-5">
+							<input type="text" placeholder="Enter Topic Name" name="TName" required>
 						</div>
 						<div class="col-md-2">
-							<input type="text" placeholder="Enter Chapter Number" name="email" required>
+							<label for="Hours"><b>Topic Hours</b></label>
 						</div>
-						<div class="col-md-2">
-							<label for="email"><b>Chapter Name:</b></label>
-						</div>
-						<div class="col-md-4">
-							<input type="text" placeholder="Enter Chapter Name" name="email" required>
-						</div><div class="col-md-2"></div>
 						
-						<div class="col-md-12"> <br /></div>
-
-						<div class="col-md-2">
-							<label for="email"><b>No. of Topic/s</b></label>
-						</div>
-						<div class="col-md-2">
-							<input type="text" placeholder="Enter Number of Topic/s" name="email" required>
-						</div><div class="col-md-8"></div>
-						<div class="col-md-12"> <br /></div>
-						
-						<div class="col-md-2">
-							<label for="email"><b>Topic No.</b></label>
-						</div>
-						<div class="col-md-2">
-							<input type="text" placeholder="Enter Topic Number" name="email" required>
-						</div>
-												<div class="col-md-2">
-							<label for="email"><b>Topic Name.</b></label>
-						</div>
-						<div class="col-md-4">
-							<input type="text" placeholder="Enter Topic Name" name="email" required>
-						</div>
-												<div class="col-md-1">
-							<label for="email"><b>Hours</b></label>
-						</div>
 						<div class="col-md-1">
-							<input type="text" placeholder="Enter No. of Hours" name="email" required>
+							<input type="text" placeholder="Enter Hours" name="Hours" required>
 						</div>
-					</div>
-					 <br /> <br />
-				<button type="submit" class="btn">Add User</button>
+						
+				</div>
+			</div>
+			<br />
+			<button type="submit" class="btn" name="addCourseSyllabus">Add Course Syllabus</button>
 			</form>
-        </div>
-      </div>
-    </div>
-	 </div>
+			</div>
+		</div>
+	</div>
+</div>
 
-  <!-- Portfolio Modal 2 -->
+
+
+  <!-- This is where you display course syllabus -->
+  
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
       <div class="portfolio-modal-dialog bg-white">
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
@@ -387,7 +395,8 @@
 			  <hr class="star-dark mb-5">
             </div>
 			<div class="col-lg-12" style="font-family: Montserrat;">
-			   <!-- List of Professors Section -->
+			
+			<!-- List of Course Syllabus -->
 			<section id="portfolio">
 				<div class="container">
 					<div class="row">
@@ -453,6 +462,11 @@
 
   
     
+    <!-- Import repeater js  -->
+
+
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jquery.czMore-1.5.3.2'); ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jquery.czMore-latest'); ?>" type="text/javascript"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="<?php echo base_url('bootstrap/vendor/jquery/jquery.min.js'); ?>"></script>
@@ -469,7 +483,49 @@
     <!-- Custom scripts for this template -->
     <script src="<?php echo base_url('bootstrap/js/freelancer.min.js'); ?>"></script>
 
-  </body>
+	
+<script>
+var max_fields      = 100;
+var wrapper         = $(".input_fields_wrap"); 
+var add_button      = $(".add_field_button");
+var remove_button   = $(".remove_field_button");
+var add_button_topic      = $(".add_topicfield_button");
+var remove_button_topic   = $(".remove_topicfield_button");
+
+$(add_button).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapper[0].childNodes.length;
+    if(total_fields < max_fields){
+        $(wrapper).append(' 	<div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"><label for="LName"><b>Chapter Name</b></label></div><div class="col-md-10"><input type="text" placeholder="Enter Chapter Name" name="CName" required></div><div class="col-md-12"><br /></div><div class="col-lg-8"></div><div class="col-lg-4"><button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button></div><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div></div> ');
+    }
+});
+
+$(remove_button).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapper[0].childNodes.length;
+    if(total_fields>1){
+        wrapper[0].childNodes[total_fields-1].remove();
+    }
+});
+
+$(add_button_topic).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapper[0].childNodes.length;
+    if(total_fields < max_fields){
+        $(wrapper).append(' <div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div> </div> ');
+    }
+});
+
+$(remove_button_topic).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapper[0].childNodes.length;
+    if(total_fields>1){
+        wrapper[0].childNodes[total_fields-1].remove();
+    }
+});
+
+</script>
+</body>
 
   
 
