@@ -99,8 +99,11 @@ class AdminController extends CI_Controller
 		
 		if(isset($_POST['addCourseSyllabus'])) 
 		{
-		
+			
+			$this->form_validation->set_rules('CSID', 'CSID', 'required');
+			$this->form_validation->set_rules('CNum', 'CNum', 'required');
 			$this->form_validation->set_rules('CName', 'CName', 'required');
+			$this->form_validation->set_rules('TNum', 'TNum', 'required');
 			$this->form_validation->set_rules('TName', 'TName', 'required');
 			$this->form_validation->set_rules('Hours', 'Hours', 'required');
 		
@@ -109,25 +112,28 @@ class AdminController extends CI_Controller
 				
 				//add user to database
 				$data = array (
+					
+					'CSID' => $_POST['CSID'],
+					'ChapNum' => $_POST['CNum'],
 					'ChapName' => $_POST['CName'],
+					'TopicID' => $_POST['TNum'],
 					'TopicName' => $_POST['TName'],
-					'Hours' => $_POST['Hours'],			
+					'Hours' => $_POST['Hours']		
 				
 				);
 				$this->db->insert('coursesyllabus', $data);
 				
-				
-				$this->session->set_flashdata("success", "Course Syllabus has been added to the database.");
 				redirect("AdminController/register", "refresh");
 		
 			}
 		}
-		//load view
+		//load view	
 		
 		$this->load->model('UserModel');
-			$data["displaydata"] = $this->UserModel->displaydata();
+			$userdata["userdata"] = $this->UserModel->userdata();
+			$csdata["csdata"] = $this->UserModel->csdata();
 		$this->load->view('includes/header');
-		$this->load->view('adminside',$data);
+		$this->load->view('adminside',$userdata + $csdata );
 		$this->load->view('includes/footer');	
 		
 	}
