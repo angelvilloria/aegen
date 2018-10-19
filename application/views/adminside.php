@@ -23,7 +23,9 @@
                   <h2>Add Users</h2>
                 </div>
               </div>
+
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+
             </a>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -33,7 +35,9 @@
                   <h2>Display Users</h2>
                 </div>
               </div>
+
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+
             </a>
           </div>
         </div>
@@ -53,6 +57,7 @@
                 </div>
               </div>
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+
             </a>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -63,6 +68,7 @@
                 </div>
               </div>
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+
             </a>
           </div>
         </div>
@@ -131,54 +137,83 @@
 			<?php
 			} ?>
 			
-			<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+
+			
+			
 			<form method="POST" action="" class="container" style="font-family: Montserrat;">
 			<div class="row">
 						<div class="col-md-2">
 							<label for="FacultyID"><b>Faculty ID: </b></label>
 						</div>
 						<div class="col-md-2">
-							<input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" required>
+
+							
+							<input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" value="<?php echo set_value('FacultyID'); ?>">
+							<?php echo form_error('FacultyID'); ?>
+							
 						</div>
 						<div class="col-md-8"></div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
 							<label for="LName"><b>Last Name</b></label>
 						</div>
+
 						<div class="col-md-3">
-							<input type="text" placeholder="Enter Last Name" name="LName" required>
+							
+							<input type="text" placeholder="Enter Last Name" name="LName" value="<?php echo set_value('LName'); ?>">
+							<?php echo form_error('LName'); ?>
+
 						</div>
 						<div class="col-md-2">
 							<label for="FName"><b>First Name</b></label>
 						</div>
+
 						<div class="col-md-3">
-							<input type="text" placeholder="Enter First Name" name="FName" required>
+						
+							<input type="text" placeholder="Enter First Name" name="FName" value="<?php echo set_value('FName'); ?>">
+							<?php echo form_error('FName'); ?>
+
 						</div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
 							<label for="password"><b>Password</b></label>
 						</div>
+
 						<div class="col-md-3">
-						<input type="password" placeholder="Enter Password" name="password" required>
+						
+							<input type="password" placeholder="Enter Password" name="password" value="<?php echo set_value('password'); ?>">
+							<?php echo form_error('password'); ?>
+
 						</div>
 						<div class="col-md-2">
-							<label for="password"><b>Confirm Password</b></label>
+							<label for="password2"><b>Confirm Password</b></label>
 						</div>
+
 						<div class="col-md-3">
-						<input type="password" placeholder="Confirm Password" name="password2" required>
+						
+							<input type="password" placeholder="Confirm Password" name="password2" value="<?php echo set_value('password2'); ?>">
+							<?php echo form_error('password2'); ?>
 						</div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
-							<label for="College"><b>College</b></label>
+							<label for="college"><b>College</b></label>
 						</div>
+
 						<div class="col-md-3">
-							<input type="text" placeholder="Enter College" name="college" required>
+						
+							<input type="text" placeholder="Enter College" name="college" value="<?php echo set_value('college'); ?>">
+							<?php echo form_error('college'); ?>
+
 						</div>
 						<div class="col-md-2">
 							<label for="Department"><b>Department</b></label>
 						</div>
+
 						<div class="col-md-3">
-							<input type="text" placeholder="Enter Department" name="department" required>
+						
+							<input type="text" placeholder="Enter Department" name="department" value="<?php echo set_value('department'); ?>">
+							<?php echo form_error('department'); ?>
+							
 						</div>
 					</div>
 					 <br /> <br />
