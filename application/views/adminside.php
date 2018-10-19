@@ -324,6 +324,14 @@
             </div>
 			
 						<form method="POST" action="" class="container" style="font-family: Montserrat;">
+						
+						<div class="col-md-2">
+							<label for="LName"><b>CSID</b></label>
+						</div>
+						<div class="col-md-5">
+							<input type="text" placeholder="Enter CSID" name="CSID" required>
+						</div>
+						<div class="col-md-12"><br /></div>
 <div class="row">
 <div class="col-lg-8"></div>
 <div class="col-lg-4">
@@ -334,9 +342,16 @@
 	<div class="row">
 						<div class="col-md-12"><br /></div>
 						<div class="col-md-2">
+							<label for="LName"><b>Chapter No.</b></label>
+						</div>
+						<div class="col-md-1">
+							<input type="text" placeholder="Enter Chapter Number" name="CNum" required>
+						</div>
+						
+						<div class="col-md-2">
 							<label for="LName"><b>Chapter Name</b></label>
 						</div>
-						<div class="col-md-10">
+						<div class="col-md-7">
 							<input type="text" placeholder="Enter Chapter Name" name="CName" required>
 						</div>
 						<div class="col-md-12"><br /></div>
@@ -348,11 +363,17 @@
 						</div>
 
 						<div class="col-md-12"><br /></div>
-						<div class="col-md-2"></div>
+						<div class="col-md-1"></div>
+						<div class="col-md-1">
+							<label for="LName"><b>Topic No.</b></label>
+						</div>
+						<div class="col-md-1">
+							<input type="text" placeholder="Enter Topic No." name="TName" required>
+						</div>
 						<div class="col-md-2">
 							<label for="LName"><b>Topic Name</b></label>
 						</div>
-						<div class="col-md-5">
+						<div class="col-md-4">
 							<input type="text" placeholder="Enter Topic Name" name="TName" required>
 						</div>
 						<div class="col-md-2">
@@ -365,7 +386,7 @@
 </div>
 </div>
 <br />
-<button type="submit" class="btn">Add User</button></form>
+<button type="submit" class="btn">Add Course Syllabus</button></form>
 </div>
 		</div>
             </div>
@@ -484,7 +505,7 @@ $(add_button).click(function(e){
     e.preventDefault();
     var total_fields = wrapper[0].childNodes.length;
     if(total_fields < max_fields){
-        $(wrapper).append(' 	<div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"><label for="LName"><b>Chapter Name</b></label></div><div class="col-md-10"><input type="text" placeholder="Enter Chapter Name" name="CName" required></div><div class="col-md-12"><br /></div><div class="col-lg-8"></div><div class="col-lg-4"><button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button></div><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div></div> ');
+        $(wrapper).append(' 	<div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"><label for="LName"><b>Chapter No.</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Chapter Number" name="CNum" required></div><div class="col-md-2"><label for="LName"><b>Chapter Name</b></label></div><div class="col-md-7"><input type="text" placeholder="Enter Chapter Name" name="CName" required></div><div class="col-md-12"><br /></div><div class="col-lg-8"></div><div class="col-lg-4"><button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button></div><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div></div> ');
     }
 });
 $(remove_button).click(function(e){
