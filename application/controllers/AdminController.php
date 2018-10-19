@@ -62,7 +62,8 @@ class AdminController extends CI_Controller
 	public function register()
 	{
 		
-		if(isset($_POST['addUser'])) {
+		if(isset($_POST['addUser'])) 
+		{
 			
 			$this->form_validation->set_rules('FacultyID', 'FacultyID', 'required');
 			$this->form_validation->set_rules('LName', 'Last Name', 'required');
@@ -93,6 +94,32 @@ class AdminController extends CI_Controller
 				$this->session->set_flashdata("success", "Your account has been registered.");
 				redirect("AdminController/register", "refresh");
 				
+			}
+		}
+		
+		if(isset($_POST['addCourseSyllabus'])) 
+		{
+		
+			$this->form_validation->set_rules('CName', 'CName', 'required');
+			$this->form_validation->set_rules('TName', 'TName', 'required');
+			$this->form_validation->set_rules('Hours', 'Hours', 'required');
+		
+			//if form validation is true
+			if	($this->form_validation->run() == TRUE) {
+				
+				//add user to database
+				$data = array (
+					'ChapName' => $_POST['CName'],
+					'TopicName' => $_POST['TName'],
+					'Hours' => $_POST['Hours'],			
+				
+				);
+				$this->db->insert('coursesyllabus', $data);
+				
+				
+				$this->session->set_flashdata("success", "Course Syllabus has been added to the database.");
+				redirect("AdminController/register", "refresh");
+		
 			}
 		}
 		//load view
