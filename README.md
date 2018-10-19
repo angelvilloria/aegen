@@ -1,2 +1,2 @@
 # aegen
-An Automated Exam Generator System
+AEGEN stands for Automated Exam Generator System.

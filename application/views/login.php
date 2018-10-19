@@ -100,7 +100,7 @@ h2 {
 	
 	<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
 	
-<form action="/action_page.php" method="POST" >
+<form action="" method="POST">
 
   <div class="container" style="background-color:#f1f1f1">
       <h2>Login Form</h2>

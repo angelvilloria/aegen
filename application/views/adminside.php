@@ -25,7 +25,7 @@
               </div>
 
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
-
+              
             </a>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -56,6 +56,7 @@
                   <h2>Add Course Syllabus</h2>
                 </div>
               </div>
+
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
 
             </a>
@@ -67,6 +68,7 @@
                   <h2>Edit/Display Course Syllabus</h2>
                 </div>
               </div>
+
               <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
 
             </a>
@@ -146,7 +148,6 @@
 							<label for="FacultyID"><b>Faculty ID: </b></label>
 						</div>
 						<div class="col-md-2">
-
 							
 							<input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" value="<?php echo set_value('FacultyID'); ?>">
 							<?php echo form_error('FacultyID'); ?>
@@ -162,6 +163,7 @@
 							
 							<input type="text" placeholder="Enter Last Name" name="LName" value="<?php echo set_value('LName'); ?>">
 							<?php echo form_error('LName'); ?>
+							
 
 						</div>
 						<div class="col-md-2">
@@ -172,6 +174,7 @@
 						
 							<input type="text" placeholder="Enter First Name" name="FName" value="<?php echo set_value('FName'); ?>">
 							<?php echo form_error('FName'); ?>
+							
 
 						</div>
 						<div class="col-md-12"> <br /></div>
@@ -183,6 +186,7 @@
 						
 							<input type="password" placeholder="Enter Password" name="password" value="<?php echo set_value('password'); ?>">
 							<?php echo form_error('password'); ?>
+						
 
 						</div>
 						<div class="col-md-2">
@@ -193,6 +197,8 @@
 						
 							<input type="password" placeholder="Confirm Password" name="password2" value="<?php echo set_value('password2'); ?>">
 							<?php echo form_error('password2'); ?>
+						
+
 						</div>
 						<div class="col-md-12"> <br /></div>
 						<div class="col-md-2">
@@ -203,6 +209,7 @@
 						
 							<input type="text" placeholder="Enter College" name="college" value="<?php echo set_value('college'); ?>">
 							<?php echo form_error('college'); ?>
+							
 
 						</div>
 						<div class="col-md-2">
@@ -210,6 +217,7 @@
 						</div>
 
 						<div class="col-md-3">
+
 						
 							<input type="text" placeholder="Enter Department" name="department" value="<?php echo set_value('department'); ?>">
 							<?php echo form_error('department'); ?>
