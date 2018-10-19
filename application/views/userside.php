@@ -96,8 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		<div class="row">
 			<h5>Course Syllabus</h5>
-				<table class="table table-hover table-dark">
-				<thead>
+				<table class="table table-dark table-hover">
+				<thead class="thead-dark">
 					<tr>
 						<th>CSID</th>
 						<th>Course Syllabus Title</th>
