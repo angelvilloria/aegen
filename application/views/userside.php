@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Archive</a>            
 			<li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url(); ?>index.php/AdminController/logout">Log out</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url('logout'); ?>">Log out</a>
 			  
             </li>
           </ul>
@@ -96,8 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		<div class="row">
 			<h5>Course Syllabus</h5>
-				<table class="table table-hover table-dark">
-				<thead>
+				<table class="table table-dark table-hover">
+				<thead class="thead-dark">
 					<tr>
 						<th>CSID</th>
 						<th>Course Syllabus Title</th>
@@ -139,6 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h5>Fill out the information below:</h5>
 		</div>
 		<br />
+		<form>
 		<div class="row">
 			<div class="form-group col-lg-2">
 			  <label for="csid">CSID:</label>
@@ -179,17 +180,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			  <input type="text" class="form-control" id="answer">
 			</div>
 		</div>
-		<div class="row">				
-				<div class="form-group col-lg-4">
+		<div class="row">	
+				<div class="input_fields_wrap col-lg-6">
+					<button class="add_field_button">Add Choices</button>
+					<div><input type="text" name="mytext[]"></div>
+					<br />
+				</div>		
+				<div class="form-group col-lg-3">
 				  <label for="takers">Number of Takers:</label>
 				  <input type="text" class="form-control" id="takers">
 				</div>			
-			<div class="form-group col-lg-4">
-			  <label for="errors">Number of Errors:</label>
-			  <input type="text" class="form-control" id="errors">
-			</div>
+				<div class="form-group col-lg-3">
+				  <label for="errors">Number of Errors:</label>
+				  <input type="text" class="form-control" id="errors">
+				</div>
 		</div>
+		<br />
 		<a href="#submit"><button type="submit" class="btn btn-outline-secondary">Submit</button></a>
+	  </form>	
       </div>
     </section>
 
@@ -198,68 +206,94 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Create Questionnaire</h2>
         <hr class="star-light mb-5">
-			<div class="row">
-				<div class="form-group col-lg-4">
-				  <label for="csid">CSID:</label>
-				  <select class="form-control" id="csid">
-					<option>IT 101</option>
-					<option>IT 111</option>
-					<option>IT 111L</option>
-					<option>IT 121</option>
-					<option>IT 121L</option>
-				  </select>
-				</div>
-				<div class="form-group col-lg-4">
-				  <label for="chapnum">Chapter Number:</label>
-				  <select class="form-control" id="chapnum">
-					<option>Chapter 1</option>
-					<option>Chapter 2</option>
-					<option>Chapter 3</option>
-					<option>Chapter 4</option>
-					<option>Chapter 5</option>
-				  </select>
-				</div>
-				<div class="form-group col-lg-4">
-				  <label for="chapname">Chapter Name:</label>
-				  <select class="form-control" id="chapname">
-					<option>Chapter 1 Name</option>
-					<option>Chapter 2 Name</option>
-					<option>Chapter 3 Name</option>
-					<option>Chapter 4 Name</option>
-					<option>Chapter 5 Name</option>
-				  </select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-lg-8">
-				  <label for="topic">Topic:</label>
-				  <select class="form-control" id="topic">
-					<option>Topic 1 with A Super Very Long Title</option>
-					<option>Topic 2 with A Super Very Long Title</option>
-					<option>Topic 3 with A Super Very Long Title</option>
-					<option>Topic 4 with A Super Very Long Title</option>>
-					<option>Topic 5 with A Super Very Long Title</option>
-				  </select>
-				</div>
-				<div class="form-group col-lg-4">
-				  <label for="hours">Number of Hours:</label>
-				  <input type="text" class="form-control" id="hours">
-				</div>			
-			</div>
+			<form>
 			<div class="row">
 				<div class="form-group col-lg-6">
-				  <label for="questiontype">Question Type:</label>
-				  <select class="form-control" id="questiontype">
-					<option>Matching Type</option>
-					<option>Identification</option>
-					<option>Enumeration</option>
-					<option>True or False</option>
-					<option>Essay</option>
-				  </select>
-				</div>			
+				  <label for="csid">CSID:</label>
+					<select class="form-control" id="csid">
+						<option>IT 101</option>						
+						<option>IT 111</option>
+						<option>IT 111L</option>						
+						<option>IT 121</option>
+						<option>IT 121L</option>
+					</select>
+				</div>
+				<div class="form-group col-lg-6"></div>		
 			</div>
+			<div class="row">
+				<div class="col-lg-12">
+				<label for="chap">Chapter:</label>
+				<ul style="list-style: none;">
+					<li>
+					  <input type="checkbox" id="option"><label for="option"> Chapter 1: Name of Chapter 1</label>
+					  <ul style="list-style: none;">
+						<li><label><input type="checkbox" class="subOption"> Topic 1 with A Super Very Long Title</label></li>
+						<div class="form-group col-lg-4">
+						  <label for="questiontype">Question Type:</label>
+						  <select class="form-control" id="questiontype">
+							<option>Multiple Choice</option>
+							<option>Identification</option>
+							<option>Enumeration</option>
+							<option>True or False</option>
+							<option>Essay</option>
+						  </select>
+						</div>
+						<div class="form-group col-lg-8"></div>	
+						<li><label><input type="checkbox" class="subOption"> Topic 2 with A Super Very Long Title</label></li>
+						<div class="form-group col-lg-4">
+						  <label for="questiontype">Question Type:</label>
+						  <select class="form-control" id="questiontype">
+							<option>Multiple Choice</option>
+							<option>Identification</option>
+							<option>Enumeration</option>
+							<option>True or False</option>
+							<option>Essay</option>
+						  </select>
+						</div>
+						<div class="form-group col-lg-8"></div>	
+						<li><label><input type="checkbox" class="subOption"> Topic 3 with A Super Very Long Title</label></li>
+							<div class="form-group col-lg-4">
+						  <label for="questiontype">Question Type:</label>
+						  <select class="form-control" id="questiontype">
+							<option>Multiple Choice</option>
+							<option>Identification</option>
+							<option>Enumeration</option>
+							<option>True or False</option>
+							<option>Essay</option>
+						  </select>
+						</div>
+						<div class="form-group col-lg-8"></div>	
+						<li><label><input type="checkbox" class="subOption"> Topic 4 with A Super Very Long Title</label></li>
+						<div class="form-group col-lg-4">
+						  <label for="questiontype">Question Type:</label>
+						  <select class="form-control" id="questiontype">
+							<option>Multiple Choice</option>
+							<option>Identification</option>
+							<option>Enumeration</option>
+							<option>True or False</option>
+							<option>Essay</option>
+						  </select>
+						</div>
+						<div class="form-group col-lg-8"></div>	
+						<li><label><input type="checkbox" class="subOption"> Topic 5 with A Super Very Long Title</label></li>
+						<div class="form-group col-lg-4">
+						  <label for="questiontype">Question Type:</label>
+						  <select class="form-control" id="questiontype">
+							<option>Multiple Choice</option>
+							<option>Identification</option>
+							<option>Enumeration</option>
+							<option>True or False</option>
+							<option>Essay</option>
+						  </select>
+						</div>
+						<div class="form-group col-lg-8"></div>	
+					  </ul>
+					</li>
+				 </ul>
+				</div>
+		</div>
 			<br />
-			<div class="row">				
+		<div class="row">				
 				<div class="col-lg-4">
 					<a href="#generate"><button type="submit" class="btn btn-secondary btn-block">Generate</button></a>			
 				</div>
@@ -269,8 +303,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-lg-4">
 					<a href="#cancel"><button type="submit" class="btn btn-dark btn-block">Cancel</button></a>
 				</div>
-			</div>
-      </div>
+		</div>
+		</form>
     </section>
 
     <!-- Contact Section -->
@@ -286,7 +320,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<th>CSID</th>
 						<th>File Name</th>
 						<th>Date Created</th>
-						<th>Status</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -386,19 +420,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="bootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="bootstrap/endor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+    <script src="<?php echo base_url('bootstrap/endor/magnific-popup/jquery.magnific-popup.min.js') ?>"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="bootstrap/js/jqBootstrapValidation.js"></script>
-    <script src="bootstrap/js/contact_me.js"></script>
+    <script src="<?php echo base_url('bootstrap/js/jqBootstrapValidation.js') ?>"></script>
+    <script src="<?php echo base_url('bootstrap/js/contact_me.js') ?>"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="bootstrap/js/freelancer.min.js"></script>
+    <script src="<?php echo base_url('bootstrap/js/freelancer.min.js') ?>"></script>
+	<script src="<?php echo base_url('bootstrap/js/checkbox.js') ?>"></script>
+	<script src="<?php echo base_url('bootstrap/js/addinput.js') ?>"></script>
 
   </body>
 

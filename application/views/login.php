@@ -1,126 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/vendor/bootstrap/css/bootstrap.min'); ?>" >
+	<head>
+		<title>AEGEN: Exam Generator System</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<style>
+			:root {
+			  --input-padding-x: 1.5rem;
+			  --input-padding-y: .25rem;
+			}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif, Montserrat;
-	    /* The image used */
-    background-image: url(<?php echo base_url('bootstrap/img/bg.jpg') ?>);
-    min-height: 380px;
-    /* Center and scale the image nicely */
-    background-repeat: no-repeat;
-    background-size: cover;
-	overflow: hidden;
-	}
-form {
-	border: 3px solid #f1f1f1;
-	background-color: white;
-	}
+			body {
+			  background: #80d0c7;
+			  /* fallback for old browsers */
+			  background: -webkit-linear-gradient(to right, #13547a, #80d0c7);
+			  /* Chrome 10-25, Safari 5.1-6 */
+			  background: linear-gradient(to right, #13547a, #80d0c7);
+			  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+			.card-signin {
+			  border: 0;
+			  border-radius: 1rem;
+			  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+			}
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
+			.card-signin .card-title {
+			  margin-bottom: 2rem;
+			  font-weight: 300;
+			  font-size: 1.5rem;
+			}
 
-button:hover {
-    opacity: 0.8;
-}
+			.card-signin .card-body {
+			  padding: 2rem;
+			}
 
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
+			.form-signin {
+			  width: 100%;
+			}
 
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
+			.form-signin .btn {
+			  font-size: 80%;
+			  border-radius: 5rem;
+			  letter-spacing: .1rem;
+			  font-weight: bold;
+			  padding: 1rem;
+			  transition: all 0.2s;
+			}
 
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
+			.form-label-group {
+			  position: relative;
+			  margin-bottom: 1rem;
+			}
 
-.container {
-    padding: 16px;
-}
+			.form-label-group input {
+			  border-radius: 2rem;
+			}
 
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
+			.form-label-group>input,
+			.form-label-group>label {
+			  padding: var(--input-padding-y) var(--input-padding-x);
+			}
 
-h2 {
-	font-family: Montserrat;
-}
+			.form-label-group>label {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  display: block;
+			  width: 100%;
+			  margin-bottom: 0;
+			  /* Override default `<label>` margin */
+			  line-height: 1.5;
+			  color: #495057;
+			  border: 1px solid transparent;
+			  border-radius: .25rem;
+			  transition: all .1s ease-in-out;
+			}
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
-</head>
-<body>
+			.form-label-group input::-webkit-input-placeholder {
+			  color: transparent;
+			}
 
-<br />
-<br />
-<br />
-<div class="row">
-<div class="col-lg-6"></div>
-<div class="col-lg-5">
+			.form-label-group input:-ms-input-placeholder {
+			  color: transparent;
+			}
 
-	<?php if (isset($_SESSION['success'])) { ?>
-		<div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
-	<?php
-	} ?>
+			.form-label-group input::-ms-input-placeholder {
+			  color: transparent;
+			}
+
+			.form-label-group input::-moz-placeholder {
+			  color: transparent;
+			}
+
+			.form-label-group input::placeholder {
+			  color: transparent;
+			}
+
+			.form-label-group input:not(:placeholder-shown) {
+			  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+			  padding-bottom: calc(var(--input-padding-y) / 3);
+			}
+
+			.form-label-group input:not(:placeholder-shown)~label {
+			  padding-top: calc(var(--input-padding-y) / 3);
+			  padding-bottom: calc(var(--input-padding-y) / 3);
+			  font-size: 12px;
+			  color: #777;
+			}
+		</style>
+	</head>
+	<body>
 	
-	<?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
 	
-<form action="" method="POST">
-
-  <div class="container" style="background-color:#f1f1f1">
-      <h2>Login Form</h2>
-  </div>
   <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center"><b>Welcome to AEGEN</b></h5>
+            <h5><small class="card-title text-center">Please log in your account.</small></h5>
+			<hr class="my-4">
+			
+			
+			<?php if (isset($_SESSION['success'])) { ?>
+				<div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
+			<?php
+			} ?>
+			
+			
+            <form action="" method="POST" class="form-signin">
+              
+			  <div class="form-label-group">
+                <input type="text" name="FacultyID" id="FacultyID" class="form-control" placeholder="Faculty ID" value="<?php echo set_value('FacultyID'); ?>">
+                <label for="FacultyID">Faculty ID</label>
+				<div style="color:red;"><?php echo form_error('FacultyID'); ?></div>
+              </div>
 
-    <label for="FacultyID"><b>Faculty ID</b></label>
-    <input type="text" placeholder="Enter Faculty ID" name="FacultyID" id="FacultyID" >
+              <div class="form-label-group">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>">
+                <label for="password">Password</label>
+				<div style="color:red;"><?php echo form_error('password'); ?></div>
+              </div>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password"  id="password">
-
-    <button type="submit" name="login">Login</button>
-  <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+			  <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Log in</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-</form>
-</div>
-
 </body>
 </html>
