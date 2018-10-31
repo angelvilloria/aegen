@@ -53,10 +53,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'AdminController';
 $route['login'] = 'AdminController/login';
 $route['register'] = 'AdminController/register';
+$route['logout'] = 'AdminController/logout';
 
 //user
 $route['user'] = 'UserController';
 $route['profile'] = 'UserController/profile';
+
 
 
 $route['404_override'] = '';
