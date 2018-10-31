@@ -56,7 +56,7 @@ class AdminController extends CI_Controller
 	public function logout()
 	{
 			unset($_SESSION);
-			redirect("AdminController/login","refresh");
+			redirect(base_url('login'),"refresh");
 	}
 	
 	public function register()

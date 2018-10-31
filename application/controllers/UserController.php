@@ -16,7 +16,6 @@ class UserController extends CI_Controller {
 	{
 		$this->load->view('includes/header');
 		$this->load->view('userside');
-		$this->load->view('includes/footer');
 	}
 	
 	
