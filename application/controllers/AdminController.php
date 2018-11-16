@@ -36,7 +36,8 @@ class AdminController extends CI_Controller
 				
 				
 				//redirect to profile page //temporary palang itu
-				
+				$this->load->library('session');
+				$this->session->set_flashdata('id', $FacultyID);
 				redirect("UserController/profile");	
 				
 				
