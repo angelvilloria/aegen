@@ -30,25 +30,17 @@
    background: #18bc9c;
    }
    
-   table tfoot, table thead,table tr:nth-of-type(2n) {background:none repeat scroll 0 0 #f8f8f8;}
-   
    thead{
 	border-bottom: 1px solid #e5e5e5;
 	background-color: #f8f8f8;
    }
-   
-   table thead{
-   background-color: #f8f8f8;
-   }
+
    
    table tbody tr{
 	cursor: pointer;
 	transition: background-color .5s;
    }
-   
-   table tbody tr:hover{
-	background-color: #18bc9c;
-   }	  
+  
    .title-head{
    padding-top: 120px;
    padding-bottom: 50px;
