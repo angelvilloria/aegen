@@ -68,31 +68,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <hr class="star-light">
 		
 		<!-- This is where you display the user's details -->
-		<div class="row">		
+		<?php
+			foreach($user as $user)
+			{ ?>
+			
+			<div class="row">		
 				<div class="form-group col-lg-4">
 					<h5>Faculty ID: </h5>	
-					<input type="text" class="form-control form-control-sm" id="FacultyID">
+					<input type="text" class="form-control form-control-sm" id="FacultyID" style="text-align: center;" value="<?php echo $user['FacultyID']; ?>">
 				</div>
-			<div class="form-group col-lg-8">
-					<h5>Name: </h5>
-					<input type="text" class="form-control form-control-sm" id="name">
-			</div>	
-		</div>
-		<div class="row">				
-			<div class="form-group col-lg-4">
-					<h5>Password: </h5>	
-					<input type="password" class="form-control form-control-sm" id="password">
-					<a href="#changepass" style="color: white;"> Change Password</a>			
+				<div class="form-group col-lg-8">
+						<h5>Name: </h5>
+						<input type="text" class="form-control form-control-sm" id="name" style="text-align: center;" value="<?php echo $user['FName']; ?> <?php echo $user['LName']; ?>">
+				</div>	
 			</div>
-			<div class="form-group col-lg-4">
-					<h5>College: </h5>
-					<input type="text" class="form-control form-control-sm" id="college">
+			
+			<div class="row">				
+				<div class="form-group col-lg-4">
+						<h5>Password: </h5>	
+						<input type="password" class="form-control form-control-sm" id="password" style="text-align: center;" value="<?php echo $user['Password']; ?>">
+						<a href="#changepass" style="color: white;"> Change Password</a>			
+				</div>
+				<div class="form-group col-lg-4">
+						<h5>College: </h5>
+						<input type="text" class="form-control form-control-sm" id="college" style="text-align: center;" value="<?php echo $user['College']; ?>">
+				</div>
+				<div class="form-group col-lg-4">
+						<h5>Department: </h5>
+						<input type="text" class="form-control form-control-sm" id="department" style="text-align: center;" value="<?php echo $user['Department']; ?>">
+				</div>				
 			</div>
-			<div class="form-group col-lg-4">
-					<h5>Department: </h5>
-					<input type="text" class="form-control form-control-sm" id="department">
-			</div>				
-		</div>
+			<?php } ?>
 			
 		<div class="row">
 			<h5>Course Syllabus</h5>
@@ -104,27 +110,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>IT 101</td>
-						<td>IT Fundamentals</td>
-					</tr>					
-					<tr>
-						<td>IT 111</td>
-						<td>Computer Programming 1, Lec</td>
-					</tr>					
-					<tr>
-						<td>IT 111L</td>
-						<td>Computer Programming 1, Lab</td>
-					</tr>					
-					<tr>
-						<td>IT 121</td>
-						<td>Computer Programming 2, Lec</td>
-					</tr>					
-					<tr>
-						<td>IT 121L</td>
-						<td>Computer Programming 2, Lab</td>
-					</tr>
-				</table>
+				<?php
+							foreach($cs as $cs)
+								echo "<tr>
+									<td>".$cs['CSID']."</td>
+									<td>".$cs['CSName']."</td>
+									</tr>";
+				?>
+				</tbody>
+			</table>
 		</div>
       </div>
     </header>
