@@ -38,8 +38,9 @@ class UserController extends CI_Controller {
 		}
 		$data['cs'] = $csid_details;
 
-		$this->load->view('includes/header');
+		$this->load->view('includes/userheader');
 		$this->load->view('userside', $data);
+		$this->load->view('includes/footer');	
 	}
 	
 }
