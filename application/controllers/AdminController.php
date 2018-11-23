@@ -36,8 +36,9 @@ class AdminController extends CI_Controller
 				
 				
 				//redirect to profile page //temporary palang itu
-				
-				redirect("UserController/profile");	
+				$this->load->library('session');
+				$this->session->set_flashdata('id', $FacultyID);
+				redirect(base_url('profile'));	
 				
 				
 				} else {
@@ -45,7 +46,7 @@ class AdminController extends CI_Controller
 						
 				//redirect back to login page 
 				
-				redirect("AdminController/login");
+				redirect(base_url('login'));
 				}
 		}
 		
@@ -55,8 +56,8 @@ class AdminController extends CI_Controller
 	
 	public function logout()
 	{
-			unset($_SESSION);
-			redirect("AdminController/login","refresh");
+			session_destroy();
+			redirect(base_url('login'));
 	}
 	
 	public function register()
@@ -92,7 +93,7 @@ class AdminController extends CI_Controller
 				
 				
 				$this->session->set_flashdata("success", "Your account has been registered.");
-				redirect("AdminController/register", "refresh");
+				redirect(base_url('register'));
 				
 			}
 		}
@@ -123,7 +124,7 @@ class AdminController extends CI_Controller
 				);
 				$this->db->insert('coursesyllabus', $data);
 				
-				redirect("AdminController/register", "refresh");
+				redirect(base_url('register'));
 		
 			}
 		}
