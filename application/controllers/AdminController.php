@@ -133,9 +133,9 @@ class AdminController extends CI_Controller
 		$this->load->model('UserModel');
 			$userdata["userdata"] = $this->UserModel->userdata();
 			$csdata["csdata"] = $this->UserModel->csdata();
-		$this->load->view('includes/header');
+		$this->load->view('includes/adminheader');
 		$this->load->view('adminside',$userdata + $csdata );
-		$this->load->view('includes/footer');	
+		$this->load->view('includes/footer');
 		
 	}
 }
