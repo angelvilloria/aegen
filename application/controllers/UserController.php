@@ -11,7 +11,7 @@ class UserController extends CI_Controller {
 		if (!isset($_SESSION['user_logged']))
 		{
 			$this->session->set_flashdata("error","Please log in first.");
-			redirect("AdminController/login","refresh");
+			redirect(base_url("login"));
 		}
 	}
 	public function profile()
