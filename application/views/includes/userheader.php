@@ -22,7 +22,7 @@
     <link href="bootstrap/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap/css/freelancer.min.css" rel="stylesheet">
+    <link href="bootstrap/css/freelancer.css" rel="stylesheet">
 
   </head>
 
