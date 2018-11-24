@@ -2,12 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
     <!-- Profile Section -->
-    <header class="masthead bg-primary text-white text-center">
+    <header class="masthead bg-primary text-white text-center"">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="bootstrap/img/profile.png" alt="">
 		
-        <h1 class="text-uppercase mb-0">Hello, <?php echo $_SESSION['FacultyID']; ?>! Welcome to AEGEN!</h1>
-        <h3 class="text-uppercase mb-0">Automated Exam Generator System</h3>
+        <h1 class="text-uppercase mb-0" style="color: #66050f;">Hello, <?php echo $_SESSION['FacultyID']; ?>! Welcome to AEGEN!</h1>
+        <h3 class="text-uppercase mb-0" style="color: #66050f;">Automated Exam Generator System</h3>
         <hr class="star-light">
 		
 		<!-- This is where you display the user's details -->
@@ -15,35 +15,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			foreach($user as $user)
 			{ ?>
 			
-			<div class="row">		
+			<div class="row"  style="color: black;">		
 				<div class="form-group col-lg-4">
 					<h5>Faculty ID: </h5>	
-					<input type="text" class="form-control form-control-sm" id="FacultyID" style="text-align: center;" value="<?php echo $user['FacultyID']; ?>">
+					<input type="text" class="form-control form-control-sm" id="FacultyID" style="text-align: center;" value="<?php echo $user['FacultyID']; ?>" disabled>
 				</div>
 				<div class="form-group col-lg-8">
 						<h5>Name: </h5>
-						<input type="text" class="form-control form-control-sm" id="name" style="text-align: center;" value="<?php echo $user['FName']; ?> <?php echo $user['LName']; ?>">
+						<input type="text" class="form-control form-control-sm" id="name" style="text-align: center;" value="<?php echo $user['FName']; ?> <?php echo $user['LName']; ?>" disabled>
 				</div>	
 			</div>
 			
-			<div class="row">				
+			<div class="row" style="color: black;">				
 				<div class="form-group col-lg-4">
 						<h5>Password: </h5>	
-						<input type="password" class="form-control form-control-sm" id="password" style="text-align: center;" value="<?php echo $user['Password']; ?>">
+						<input type="password" class="form-control form-control-sm" id="password" style="text-align: center;" value="<?php echo $user['Password']; ?>" disabled>
 						<a href="#changepass" style="color: white;"> Change Password</a>			
 				</div>
 				<div class="form-group col-lg-4">
 						<h5>College: </h5>
-						<input type="text" class="form-control form-control-sm" id="college" style="text-align: center;" value="<?php echo $user['College']; ?>">
+						<input type="text" class="form-control form-control-sm" id="college" style="text-align: center;" value="<?php echo $user['College']; ?>" disabled>
 				</div>
 				<div class="form-group col-lg-4">
 						<h5>Department: </h5>
-						<input type="text" class="form-control form-control-sm" id="department" style="text-align: center;" value="<?php echo $user['Department']; ?>">
+						<input type="text" class="form-control form-control-sm" id="department" style="text-align: center;" value="<?php echo $user['Department']; ?>" disabled>
 				</div>				
 			</div>
 			<?php } ?>
 			
-		<div class="row">
+		<div class="row" style="color: black;">
 			<h5>Course Syllabus</h5>
 				<table class="table table-dark table-hover">
 				<thead class="thead-dark">
@@ -141,9 +141,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- About Section -->
     <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">Create Questionnaire</h2>
+        <h2 class="text-center text-uppercase" style="color: #66050f;">Create Questionnaire</h2>
         <hr class="star-light mb-5">
-			<form>
+			<form style="color: black;">
 			<div class="row">
 				<div class="form-group col-lg-6">
 				  <label for="csid">CSID:</label>
