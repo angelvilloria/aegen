@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/vendor/magnific-popup/magnific-popup'); ?>" >
 
     <!-- Custom styles for this template -->
-    <link  rel="stylesheet" href="<?php echo base_url('bootstrap/css/freelancer.min'); ?>">
+    <link  rel="stylesheet" href="<?php echo base_url('bootstrap/css/freelancer2'); ?>">
 
   </head>
 <style>
