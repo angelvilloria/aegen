@@ -3,7 +3,7 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="bootstrap/img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0" style="color: #36454f;">AEGen</h1>
+        <h1 class="text-uppercase mb-0">AEGen</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0" style="font-family: Montserrat; color: #36454f;">AUTOMATED EXAM GENERATOR</h2>
       </div>
@@ -24,7 +24,7 @@
                 </div>
               </div>
 
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/AddUser.png') ?>" alt="">
               
             </a>
           </div>
@@ -36,7 +36,7 @@
                 </div>
               </div>
 
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/ManageUser.png') ?>" alt="">
 
             </a>
           </div>
@@ -57,7 +57,7 @@
                 </div>
               </div>
 
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cabin.png') ?>" alt="">
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/AddCS.png') ?>" alt="">
 
             </a>
           </div>
@@ -69,16 +69,14 @@
                 </div>
               </div>
 
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/cake.png') ?>" alt="">
+              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/ManageCS.png') ?>" alt="">
 
             </a>
           </div>
         </div>
       </div>
     </section>
-	
-
-    <!-- This is where you add users -->
+	<!-- This is where you add users -->
 
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
       <div class="portfolio-modal-dialog bg-white">
@@ -441,7 +439,10 @@
           </div>
         </div>
 
+
+
   
+    
     <!-- Import repeater js  -->
 
 
