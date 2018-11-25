@@ -3,7 +3,7 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="bootstrap/img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0">AEGen</h1>
+        <h1 class="text-uppercase mb-0" style="font-family: Montserrat; color: #36454f;">AEGen</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0" style="font-family: Montserrat; color: #36454f;">AUTOMATED EXAM GENERATOR</h2>
       </div>
