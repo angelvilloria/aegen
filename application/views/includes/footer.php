@@ -2,31 +2,11 @@
     <footer class="footer text-center">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 mb-5 mb-lg-0">
+          <div class="col-md-6 mb-5 mb-lg-0">
             <h4 class="text-uppercase mb-4">Location</h4>
             <p class="lead mb-0" style="font-family: Segoe UI;">Manila, Philippines</p>
           </div>
-          <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fab fa-fw fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fab fa-fw fa-google-plus-g"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i class="fab fa-fw fa-twitter"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4" >
+          <div class="col-md-6" >
             <h4 class="text-uppercase mb-4">About AEGEN</h4>
             <p class="lead mb-0" style="font-family: Segoe UI;">AEGen is an automated exam generator system which you can item analyze your question and generate questions stored in a databank.</p>
           </div>
