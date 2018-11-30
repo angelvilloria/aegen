@@ -223,10 +223,10 @@
             </div>
 
 	<div class="container">
-
+<h3 class="card-title" id="repeat-form">Add Chapter/s</h3>
   <div class="card">
   <div class="card-header">
-                    <h3 class="card-title" id="repeat-form">Add Chapter/s</h3>
+                    
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
 					       <form class="form row col-md-12">
 										<div class="form-group mb-1 col-md-3">
@@ -252,7 +252,13 @@
                                                 
                                             <div data-repeater-item="" class="mt-repeater-item col-md-12" style="">
                                                     <!-- jQuery Repeater Container -->
-                                                    <div class="mt-repeater-inpu col-md-10">
+													<div class="row">
+													<div class="mt-repeater-inpu col-md-1">
+													 <label class="control-label">No.</label>
+													 <br>
+													<input type="number"  class="form-control"  id="myNumber" placeholder="1">
+                                                    </div>
+                                                    <div class="mt-repeater-inpu col-md-9">
                                                         <label class="control-label">Name</label>
                                                         <br>
                                                         <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input Chapter Name"> 
@@ -261,7 +267,9 @@
                                                         <a href="javascript:;" data-repeater-delete="" class="btn btn-danger mt-repeater-delete ">
                                                             <i class="fa fa-close"></i> Delete</a>
                                                     </div>
-                                                </div></div><br>
+                                                </div>
+												</div>
+												</div><br>
                                             <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
                                                 <i class="fa fa-plus"></i> Add</a>
                                         </form>
@@ -286,13 +294,13 @@
 <br>
 </div>	
 	<div class="container">
-
+                    <h3 class="card-title" id="repeat-form">Add Topic/s</h3>
   <div class="card">
   <div class="card-header">
-                    <h3 class="card-title" id="repeat-form">Add Topic/s</h3>
+
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
 					       <form class="form row col-md-12">
-<div class="form-group mb-1 col-sm-12 col-md-3">
+								<div class="form-group mb-1 col-sm-12 col-md-3">
                                             <label for="csid">CSID</label>
                                             <br>
                                             <select class="form-control" id="csid">
@@ -334,11 +342,17 @@
                                             <div data-repeater-item="" class="mt-repeater-item col-md-12" style="">
                                                     <!-- jQuery Repeater Container -->
 													<div class="row">
-                                                    <div class="mt-repeater-inpu col-md-8">
+													<div class="mt-repeater-inpu col-md-1">
+													 <label class="control-label">No.</label>
+													 <br>
+													<input type="number"  class="form-control"  id="myNumber" placeholder="1">
+                                                    </div>													
+													<div class="mt-repeater-inpu col-md-7">
                                                         <label class="control-label">Topic Name</label>
                                                         <br>
                                                         <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input Topic Name"> 
 													</div>
+													
                                                     <div class="mt-repeater-inpu col-md-2">
                                                         <label class="control-label">No. of Hours</label>
                                                         <br>
@@ -350,7 +364,7 @@
                                                             <i class="fa fa-close"></i> Delete</a>
                                                     </div>
                                                 </div></div><br>
-                                            <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+                                            <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add" >
                                                 <i class="fa fa-plus"></i> Add</a>
                                         </form>
                                     </div>
@@ -443,8 +457,6 @@
             </div>
           </div>
         </div>
-
-
 
   
     
