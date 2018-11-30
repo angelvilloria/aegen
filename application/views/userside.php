@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row" style="color: black;">				
 				<div class="form-group col-lg-4">
 						<h5>Password: </h5>	
-						<input type="password" class="form-control form-control-sm" id="password" style="text-align: center;" value="<?php echo $user['Password']; ?>" disabled>
+						<input type="password" class="form-control form-control-sm" id="password" style="text-align: center;" value="<?php echo $_SESSION['password']; ?>" disabled>
 						<a href="#changepass" style="color: white;"> Change Password</a>			
 				</div>
 				<div class="form-group col-lg-4">
@@ -54,11 +54,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</thead>
 				<tbody>
 				<?php
-							foreach($cs as $cs)
+							foreach($cs as $ccss){
 								echo "<tr>
-									<td>".$cs['CSID']."</td>
-									<td>".$cs['CSName']."</td>
+									<td>".$ccss['CSID']."</td>
+									<td>".$ccss['CSName']."</td>
 									</tr>";
+							}
 				?>
 				</tbody>
 			</table>
@@ -76,64 +77,117 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h5>Fill out the information below:</h5>
 		</div>
 		<br />
-		<form>
+		<form action="UserController/save_question" method="get">
 		<div class="row">
 			<div class="form-group col-lg-2">
 			  <label for="csid">CSID:</label>
-			  <input type="text" class="form-control" id="csid">
+			  <select class="form-control" id="csid" onchange="get_chapter()" name="CSID">
+			  <option></option>
+			  <?php
+					foreach($cs as $ccss)
+						echo "<option value=".$ccss['CSID'].">".$ccss['CSID']."</option>";
+			  ?>
+				
+			  </select>
 			</div>			
 			<div class="form-group col-lg-2">
 			  <label for="chapnum">Chapter Number:</label>
-			  <input type="text" class="form-control" id="chapnum">
+			  <select class="form-control" id="chapnum" name="ChapNum">
+			  </select>
 			</div>			 
 			<div class="form-group col-lg-8">
 			  <label for="chapname">Chapter Name:</label>
-			  <input type="text" class="form-control" id="chapname">
+			  <input type="text" class="form-control" id="chapname" name="ChapName">
 			</div>					
 		</div>
 		<div class="row">		
 			<div class="form-group col-lg-8">
 			  <label for="topic">Topic:</label>
-			  <input type="text" class="form-control" id="topic">
+			  <select class="form-control" id="topic" name="TopicNum">
+			  </select>
 			</div>	
 			<div class="form-group col-lg-4">
 			  <label for="questiontype">Question Type:</label>
-			  <select class="form-control" id="questiontype">
-				<option>Multiple Choice</option>
-				<option>Identification</option>
-				<option>Enumeration</option>
-				<option>True or False</option>
-				<option>Essay</option>
+			  <select class="form-control" id="questiontype" name="QuestionType">
+				<option value="Multiple Choice">Multiple Choice</option>
+				<option value="Identification">Identification</option>
+				<option value="Enumeration">Enumeration</option>
+				<option value="True or False">True or False</option>
+				<option value="Essay">Essay</option>
 			  </select>
 			</div>
 		</div>
 		<div class="row">				
 			<div class="form-group col-lg-8">
 			  <label for="question">Question:</label>
-			  <textarea class="form-control" rows="4" id="question"></textarea>
+			  <textarea class="form-control" rows="4" id="question" name="Question"></textarea>
 			</div>
 			<div class="form-group col-lg-4">
 			  <label for="answer">Answer:</label>
-			  <input type="text" class="form-control" id="answer">
+			  <input type="text" class="form-control" id="answer" name="Answer">
 			</div>
 		</div>
-		<div class="row">	
-				<div class="input_fields_wrap col-lg-6">
+		<div class="row">
+				<div class="input_fields_wrap col-lg-12" id="choice">
 					<button class="add_field_button">Add Choices</button>
-					<div><input type="text" name="mytext[]"></div>
+					<div><input type="text" name="choice-1"></div>
 					<br />
-				</div>		
-				<div class="form-group col-lg-3">
-				  <label for="takers">Number of Takers:</label>
-				  <input type="text" class="form-control" id="takers">
-				</div>			
-				<div class="form-group col-lg-3">
-				  <label for="errors">Number of Errors:</label>
-				  <input type="text" class="form-control" id="errors">
+				</div>				
+		</div>
+			<br />
+		<div class="row">
+				<h4>Difficulty Index</h4>
+		</div>
+		<div class="row">
+				<div class="form-group col-lg-4">
+				  <label for="students">Number of Students:</label>
+				  <input type="text" class="form-control" id="students" name="students">
+				</div>
+				<div class="form-group col-lg-4">
+				  <label for="errors">Number of Students with Correct Answers:</label>
+				  <input type="text" class="form-control" id="correctstudents" name="CorrectNum">
+				</div>
+				<div class="col-lg-4">
+				  <label for="remarks">Remarks:</label>
+				  <input type="text" class="form-control" id="remarks-difficulty" name="remarks">
 				</div>
 		</div>
-		<br />
-		<a href="#submit"><button type="submit" class="btn btn-outline-secondary">Submit</button></a>
+			<br />
+		<div class="row">
+				<h4>Discrimination Index</h4>
+		</div>
+		<div class="row">		
+				<div class="form-group col-lg-2">
+				  <label for="highgroup">High Group:</label>
+				  <input type="text" class="form-control" id="highgroup" name="highgroup" readonly>
+				</div>
+				<div class="form-group col-lg-4">
+				  <label for="correctstudents">Number of Students with Correct Answer:</label>
+				  <input type="text" class="form-control" id="correctstudents-high" name="correctstudents">
+				</div>
+				<div class="form-group col-lg-2">
+				  <label for="lowgroup">Low Group:</label>
+				  <input type="text" class="form-control" id="lowgroup" name="lowgroup" readonly>
+				</div>
+				<div class="form-group col-lg-4">
+				  <label for="correctstudents">Number of Students with Correct Answer:</label>
+				  <input type="text" class="form-control" id="correctstudents-low" name="correctstudents">
+				</div>
+		</div>
+		<div class="row">
+				<div class="col-lg-4">
+				  <label for="remarks">Remarks:</label>
+				  <input type="text" class="form-control" id="remarks-discrimination" name="remarks">
+				</div>		
+				<div class="col-lg-4">
+					<label></label>
+					<a href="#submit"><button type="submit" class="btn btn-secondary btn-block">Save</button></a>			
+				</div>				
+				<div class="col-lg-4">
+					<label></label>
+					<a href="#discard"><button type="submit" class="btn btn-dark btn-block">Discard</button></a>			
+				</div>
+		</div>
 	  </form>	
       </div>
     </section>
@@ -313,6 +367,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url('bootstrap/js/freelancer.min.js') ?>"></script>
 	<script src="<?php echo base_url('bootstrap/js/checkbox.js') ?>"></script>
 	<script src="<?php echo base_url('bootstrap/js/addinput.js') ?>"></script>
+	<script src="<?php echo base_url('bootstrap/js/get_chapter.js') ?>"></script>
+	<script src="<?php echo base_url('bootstrap/js/get_chapter_details.js') ?>"></script>
+	<script src="<?php echo base_url('bootstrap/js/document_ready.js') ?>"></script>
 
   </body>
 
