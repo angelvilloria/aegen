@@ -3,7 +3,7 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="bootstrap/img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0" style="font-family: Montserrat; color: #36454f;">AEGen</h1>
+        <h1 class="text-uppercase mb-0 " style="color: #36454f;">AEGen</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0" style="font-family: Montserrat; color: #36454f;">AUTOMATED EXAM GENERATOR</h2>
       </div>
@@ -14,75 +14,12 @@
   <section class="portfolio" id="muser">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Manage Users</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-6">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h2>Add Users</h2>
-                </div>
-              </div>
-
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/AddUser.png') ?>" alt="">
-              
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h2>Display Users</h2>
-                </div>
-              </div>
-
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/ManageUser.png') ?>" alt="">
-
-            </a>
-          </div>
-        </div>
       </div>
     </section>
-	
-	 <section class="portfolio" id="csyllabus">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Manage Course Syllabus</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-6">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h2>Add Course Syllabus</h2>
-                </div>
-              </div>
-
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/AddCS.png') ?>" alt="">
-
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h2>Display Course Syllabus</h2>
-                </div>
-              </div>
-
-              <img class="img-fluid" src="<?php echo base_url('bootstrap/img/portfolio/ManageCS.png') ?>" alt="">
-
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		
 	<!-- This is where you add users -->
 
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
       <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -90,7 +27,6 @@
 			  <hr class="star-dark mb-5">
             </div>
 		
-
 			<?php if (isset($_SESSION['success'])) { ?>
 				<div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
 			<?php
@@ -184,15 +120,14 @@
         </div>
       </div>
     </div>
-	 </div>
+<br>
+<br>
+<br>
 
     <!-- This is where you display the list of users -->
 	
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
+
       <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -244,133 +179,187 @@
 									</tr>
 								<?php
 								}
-								?>
-								
-							</thead>
-							
-							
+								?>								
+							</thead>							
 							</table>
-      
-    
 					</div>
 				</div>
 			</div>
 			</div>
 		</section>
-
-
-   
             </div>
           </div>
-        </div>
+
+
+	 <section class="portfolio" id="csyllabus">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Manage Course Syllabus</h2>
+      </div>
+    </section>
 
 
 	<!-- This is where you add course syllabus -->
 	
 
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
+
       <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Add Course Syllabus</h2>
 			  <hr class="star-dark mb-5">
             </div>
-			
-						<?php if (isset($_SESSION['success'])) { ?>
-						<div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
-						<?php
-						} ?>
-						
-						<form method="POST" action="" class="container" style="font-family: Montserrat;">
 
-						
-						<div class="col-md-2">
-							<label for="CSID"><b>CSID</b></label>
-						</div>
-						<div class="col-md-5">
-							<input type="text" placeholder="Enter CSID" name="CSID" required>
-						</div>
-						<div class="col-md-12"><br /></div>
-						<div class="row">
-						<div class="col-lg-8"></div>
-						<div class="col-lg-4">
-						<button type="button" class="add_field_button btn">Add Chapter</button> &nbsp &nbsp  &nbsp <button type="button" class="remove_field_button btn">Remove Chapter</button>
-						</div>
-						</div>
-						<div class="input_fields_wrap">
-							<div class="row">
-						<div class="col-md-12"><br /></div>
-						<div class="col-md-2">
-							<label for="CNum"><b>Chapter No.</b></label>
-						</div>
-						<div class="col-md-1">
-							<input type="text" placeholder="Enter Chapter Number" name="CNum" required>
-						</div>
-						
-						<div class="col-md-2">
-							<label for="CName"><b>Chapter Name</b></label>
-						</div>
-						<div class="col-md-7">
+	<div class="container">
 
-							<input type="text" placeholder="Enter Chapter Name" name="CName" required>
-						</div>
-						<div class="col-md-12"><br /></div>
-						
-						<div class="col-lg-8"></div>
-						<div class="col-lg-4">
-						<button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button>
-						</div>
+  <div class="card">
+  <div class="card-header">
+                    <h3 class="card-title" id="repeat-form">Add Chapter/s</h3>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+					       <form class="form row col-md-12">
+										<div class="form-group mb-1 col-md-3">
+                                            <label >CSID</label>
+                                            <br>
+                                            <input type="text" class="form-control" id="csid" placeholder="Enter CSID">
+                                        </div>
+										<div class="form-group mb-1 col-md-9">
+                                            <label >Course Name</label>
+                                            <br>
+                                            <input type="text" class="form-control" id="chapname" placeholder="Enter Chapter Name">
+                                        </div>
+                                    </form>
+                </div>
+<br>
+<br>
 
-						<div class="col-md-12"><br /></div>
-						<div class="col-md-1"></div>
-						<div class="col-md-1">
-							<label for="TNum"><b>Topic No.</b></label>
-						</div>
-						<div class="col-md-1">
-							<input type="text" placeholder="Enter Topic No." name="TNum" required>
-						</div>
-						<div class="col-md-2">
+<div class="portlet-body form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <form action="#" class="mt-repeater form-horizontal">
+                                            <div data-repeater-list="group-a">
+                                                
+                                            <div data-repeater-item="" class="mt-repeater-item col-md-12" style="">
+                                                    <!-- jQuery Repeater Container -->
+                                                    <div class="mt-repeater-inpu col-md-10">
+                                                        <label class="control-label">Name</label>
+                                                        <br>
+                                                        <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input Chapter Name"> 
+														</div>
+                                                    <div class="mt-repeater-input " style="position:absolute; right:100px;top:30px">
+                                                        <a href="javascript:;" data-repeater-delete="" class="btn btn-danger mt-repeater-delete ">
+                                                            <i class="fa fa-close"></i> Delete</a>
+                                                    </div>
+                                                </div></div><br>
+                                            <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+                                                <i class="fa fa-plus"></i> Add</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+</div>
 
-							<label for="TName"><b>Topic Name</b></label>
-						</div>
 
-						<div class="col-md-4">
 
-							<input type="text" placeholder="Enter Topic Name" name="TName" required>
-						</div>
-						<div class="col-md-2">
 
-							<label for="Hours"><b>Topic Hours</b></label>
-						</div>
-						
-						<div class="col-md-1">
-							<input type="text" placeholder="Enter Hours" name="Hours" required>
-						</div>
-					</div>
-					</div>
-					<br />
-					<button type="submit" class="btn" name="addCourseSyllabus">Add Course Syllabus</button>
-					</form>
+
+</div><div>	
+<br>
+<br>
+<br>
+<br>
+</div>	
+	<div class="container">
+
+  <div class="card">
+  <div class="card-header">
+                    <h3class="card-title" id="repeat-form">Add Topic/s</h3>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+					       <form class="form row col-md-12">
+<div class="form-group mb-1 col-sm-12 col-md-3">
+                                            <label for="csid">CSID</label>
+                                            <br>
+                                            <select class="form-control" id="csid">
+                                              <option>Select CSID</option>
+                                              <option>Option 1</option>
+                                              <option>Option 2</option>
+                                              <option>Option 3</option>
+                                              <option>Option 4</option>
+                                              <option>Option 5</option>
+                                            </select>
+                                        </div>									        
+										<div class="form-group mb-1 col-sm-12 col-md-7">
+                                            <label for="csname">Chapter Name</label>
+                                            <br>
+                                            <select class="form-control" id="csname">
+                                              <option>Select Chapter</option>
+                                              <option>Option 1</option>
+                                              <option>Option 2</option>
+                                              <option>Option 3</option>
+                                              <option>Option 4</option>
+                                              <option>Option 5</option>
+                                            </select>
+                                        </div>
+										 <div class="form-group col-sm-12 col-md-2 text-center mt-2">
+										<br>
+                                            <button type="button" class="btn btn-default" > <i class="ft-x"></i> Generate</button>
+                                        </div>
+                                    </form>
+                </div>
+<br>
+<br>
+
+<div class="portlet-body form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <form action="#" class="mt-repeater form-horizontal">
+                                            <div data-repeater-list="group-a">
+                                                
+                                            <div data-repeater-item="" class="mt-repeater-item col-md-12" style="">
+                                                    <!-- jQuery Repeater Container -->
+													<div class="row">
+                                                    <div class="mt-repeater-inpu col-md-8">
+                                                        <label class="control-label">Topic Name</label>
+                                                        <br>
+                                                        <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input Topic Name"> 
+													</div>
+                                                    <div class="mt-repeater-inpu col-md-2">
+                                                        <label class="control-label">No. of Hours</label>
+                                                        <br>
+                                                        <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input No. of Hours"> 
+													</div>
+													</div>
+                                                    <div class="mt-repeater-input " style="position:absolute; right:100px;top:30px">
+                                                        <a href="javascript:;" data-repeater-delete="" class="btn btn-danger mt-repeater-delete ">
+                                                            <i class="fa fa-close"></i> Delete</a>
+                                                    </div>
+                                                </div></div><br>
+                                            <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+                                                <i class="fa fa-plus"></i> Add</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
+<div>	
+<br>
+<br>
+<br>
+<br>
+</div>
 
 
   <!-- This is where you display course syllabus -->
   
 
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
+
       <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -432,9 +421,6 @@
 			</div>
 			</div>
 		</section>
-
-
-   
             </div>
           </div>
         </div>
@@ -443,15 +429,15 @@
 
   
     
-    <!-- Import repeater js  -->
 
-
-    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jquery.czMore-1.5.3.2'); ?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jquery.czMore-latest'); ?>" type="text/javascript"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="<?php echo base_url('bootstrap/vendor/jquery/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/bootstrap-repeater.min.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/form-repeater.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jquery-repeater.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/vendor/bootstrap/js/jqueryform-repeater.js'); ?>"></script>
 
     <!-- Plugin JavaScript -->
     <script src="<?php echo base_url('bootstrap/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
@@ -460,53 +446,14 @@
     <!-- Contact Form JavaScript -->
     <script src="<?php echo base_url('bootstrap/js/jqBootstrapValidation'); ?>"></script>
     <script src="<?php echo base_url('bootstrap/js/contact_me'); ?>"></script>
+	
+    <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
 
     <!-- Custom scripts for this template -->
     <script src="<?php echo base_url('bootstrap/js/freelancer.min.js'); ?>"></script>
 
-	
-<script>
-var max_fields      = 100;
-var wrapper         = $(".input_fields_wrap"); 
-var add_button      = $(".add_field_button");
-var remove_button   = $(".remove_field_button");
-var add_button_topic      = $(".add_topicfield_button");
-var remove_button_topic   = $(".remove_topicfield_button");
 
-$(add_button).click(function(e){
-    e.preventDefault();
-    var total_fields = wrapper[0].childNodes.length;
-    if(total_fields < max_fields){
-        $(wrapper).append(' 	<div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"><label for="LName"><b>Chapter No.</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Chapter Number" name="CNum" required></div><div class="col-md-2"><label for="LName"><b>Chapter Name</b></label></div><div class="col-md-7"><input type="text" placeholder="Enter Chapter Name" name="CName" required></div><div class="col-md-12"><br /></div><div class="col-lg-8"></div><div class="col-lg-4"><button type="button" class="add_topicfield_button btn">&nbsp Add Topic</button>  &nbsp &nbsp  &nbsp <button type="button" class="remove_topicfield_button btn">&nbsp  Remove Topic &nbsp  &nbsp</button></div><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div></div> ');
-    }
-});
 
-$(remove_button).click(function(e){
-    e.preventDefault();
-    var total_fields = wrapper[0].childNodes.length;
-    if(total_fields>1){
-        wrapper[0].childNodes[total_fields-1].remove();
-    }
-});
-
-$(add_button_topic).click(function(e){
-    e.preventDefault();
-    var total_fields = wrapper[0].childNodes.length;
-    if(total_fields < max_fields){
-        $(wrapper).append(' <div class="row"><div class="col-md-12"><br /></div><div class="col-md-2"></div><div class="col-md-2"><label for="LName"><b>Topic Name</b></label></div><div class="col-md-5"><input type="text" placeholder="Enter Topic Name" name="TName" required></div><div class="col-md-2"><label for="LName"><b>Topic Hours</b></label></div><div class="col-md-1"><input type="text" placeholder="Enter Hours" name="THour" required></div> </div> ');
-    }
-});
-
-$(remove_button_topic).click(function(e){
-    e.preventDefault();
-    var total_fields = wrapper[0].childNodes.length;
-    if(total_fields>1){
-        wrapper[0].childNodes[total_fields-1].remove();
-    }
-
-});
-
-</script>
 </body>
 
 </html>
