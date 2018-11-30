@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/vendor/bootstrap/css/bootstrap.min'); ?>" >
 
+
     <!-- Custom fonts for this template -->
     <link  rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/vendor/fontawesome-free/css/all.min'); ?>">
     <link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Montserrat:400,700'); ?>" rel="stylesheet" type="text/css">
@@ -23,9 +24,24 @@
 
     <!-- Custom styles for this template -->
     <link  rel="stylesheet" href="<?php echo base_url('bootstrap/css/freelancer2'); ?>">
+	
+	<script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+
 
   </head>
 <style>
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+	width: 100%;
+    margin-top: 0;
+}
    .active{
    background: #18bc9c;
    }
@@ -74,8 +90,19 @@
 	padding-left: -10px
 	color: #2c3e50;
    }
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}
 </style>	 
   <body id="page-top">
+  
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
