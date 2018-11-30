@@ -256,9 +256,13 @@
                                     </div>
                                 </div>
                             </div>
-</div>
-</div>
 
+										 <div class="form-group col-sm-12 col-md-12 text-center mt-10" >
+										<br>
+                                            <button type="button" class="btn btn-default col-md-3"  > <i class="ft-x"></i> Submit</button>
+                                        </div>
+</div>
+</div>
 
 
 
@@ -273,7 +277,7 @@
 
   <div class="card">
   <div class="card-header">
-                    <h3class="card-title" id="repeat-form">Add Topic/s</h3>
+                    <h3 class="card-title" id="repeat-form">Add Topic/s</h3>
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
 					       <form class="form row col-md-12">
 <div class="form-group mb-1 col-sm-12 col-md-3">
@@ -340,8 +344,11 @@
                                     </div>
                                 </div>
                             </div>
-</div>
-</div>
+										 <div class="form-group col-sm-12 col-md-12 text-center mt-10" >
+										<br>
+                                            <button type="button" class="btn btn-default col-md-3"  > <i class="ft-x"></i> Submit</button>
+                                        </div>
+</div></div>
 				</div>
 			</div>
 		</div>
