@@ -14,12 +14,12 @@ class AdminController extends CI_Controller
 			
 			$FacultyID = $_POST['FacultyID'];
 			$password = $_POST['password'];
-			$password = md5($password);
+			$passwordmd5 = md5($password);
 			
 			//check if the user is in db
 			$this->db->select('*');
 			$this->db->from('user');
-			$this->db->where(array('FacultyID' => $FacultyID, 'Password' => $password));
+			$this->db->where(array('FacultyID' => $FacultyID, 'Password' => $passwordmd5));
 			
 			$query = $this->db->get();
 			
@@ -37,7 +37,8 @@ class AdminController extends CI_Controller
 				
 				//redirect to profile page //temporary palang itu
 				$this->load->library('session');
-				$this->session->set_flashdata('id', $FacultyID);
+				$this->session->set_userdata('id', $FacultyID);
+				$this->session->set_userdata('password', $password);
 				redirect(base_url('profile'));	
 				
 				
