@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2018 at 03:34 AM
+-- Generation Time: Dec 01, 2018 at 01:52 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -37,7 +37,8 @@ CREATE TABLE `chapter` (
 --
 
 INSERT INTO `chapter` (`CSID`, `ChapNum`, `ChapName`) VALUES
-('IT102', 1, 'Introduction to PHP');
+('IT102', 1, 'Introduction to PHP'),
+('IT102', 2, 'Mwehehe');
 
 -- --------------------------------------------------------
 
@@ -50,6 +51,19 @@ CREATE TABLE `choices` (
   `QuestionID` int(5) NOT NULL,
   `Choice` varchar(300) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `choices`
+--
+
+INSERT INTO `choices` (`ChoicesID`, `QuestionID`, `Choice`) VALUES
+(2, 3, 'Ani'),
+(3, 3, 'Dae'),
+(4, 4, 'Ani'),
+(5, 4, 'Dae'),
+(6, 5, 'A'),
+(7, 5, 'Be'),
+(8, 5, 'So');
 
 -- --------------------------------------------------------
 
@@ -96,14 +110,25 @@ INSERT INTO `facultycsid` (`FacultyID`, `CSID`) VALUES
 --
 
 CREATE TABLE `questions` (
-  `QuestionID` int(5) NOT NULL,
-  `TopicID` int(5) NOT NULL,
+  `QuestionID` int(2) NOT NULL,
   `CSID` varchar(10) NOT NULL,
-  `ChoicesID` int(5) NOT NULL,
+  `ChapNum` int(2) NOT NULL,
+  `TopicNum` int(2) NOT NULL,
   `Question` varchar(300) NOT NULL,
   `QuestionType` char(50) NOT NULL,
+  `TakersNum` int(2) NOT NULL,
+  `CorrectNum` int(2) NOT NULL,
   `IsApproved` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`QuestionID`, `CSID`, `ChapNum`, `TopicNum`, `Question`, `QuestionType`, `TakersNum`, `CorrectNum`, `IsApproved`) VALUES
+(4, 'IT102', 1, 1, 'Saranghae ?', 'Multiple Choice', 11, 1, 0),
+(3, 'IT102', 1, 1, 'Saranghae ?', 'Multiple Choice', 11, 1, 0),
+(5, 'IT102', 2, 1, 'Eh bale ? ', 'Multiple Choice', 11, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -124,7 +149,9 @@ CREATE TABLE `topic` (
 --
 
 INSERT INTO `topic` (`CSID`, `ChapNum`, `TopicNum`, `TopicName`, `Hours`) VALUES
-('IT102', 1, 1, 'Netbeans IDE Introduction', 2);
+('IT102', 1, 1, 'Netbeans IDE Introduction', 2),
+('IT102', 1, 2, 'Basic Programming Languages Part2', 2),
+('IT102', 2, 1, 'Basic keme', 2);
 
 -- --------------------------------------------------------
 
@@ -181,6 +208,20 @@ ALTER TABLE `questions`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`FacultyID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `choices`
+--
+ALTER TABLE `choices`
+  MODIFY `ChoicesID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `QuestionID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
