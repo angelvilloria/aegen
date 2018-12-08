@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2018 at 01:52 AM
+-- Generation Time: Dec 08, 2018 at 01:03 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `chapter` (
   `CSID` varchar(10) NOT NULL,
+  `CSName` varchar(50) NOT NULL,
   `ChapNum` int(2) NOT NULL,
   `ChapName` varchar(60) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -36,9 +37,18 @@ CREATE TABLE `chapter` (
 -- Dumping data for table `chapter`
 --
 
-INSERT INTO `chapter` (`CSID`, `ChapNum`, `ChapName`) VALUES
-('IT102', 1, 'Introduction to PHP'),
-('IT102', 2, 'Mwehehe');
+INSERT INTO `chapter` (`CSID`, `CSName`, `ChapNum`, `ChapName`) VALUES
+('IT102', '', 1, 'Introduction to PHP'),
+('IT102', '', 2, 'Mwehehe'),
+('IT111', '', 0, ''),
+('IT111', '', 0, ''),
+('CS202', '', 0, ''),
+('CS202', 'DBMS', 0, ''),
+('CS202', 'DBMS', 1, ''),
+('IS123', 'DBMS', 1, ''),
+('IS123', 'DBMS', 1, ''),
+('IS123', 'DBMS', 1, ''),
+('IS123', 'HTML', 2, '');
 
 -- --------------------------------------------------------
 
@@ -178,7 +188,8 @@ INSERT INTO `user` (`FacultyID`, `CSID`, `LName`, `FName`, `Password`, `College`
 ('15-037-018', '', 'Cueto', 'Mary Tierce', '953f0e5d387909913f49fce1729edf2f', 'COS', 'MATH', 0),
 ('15-037-001', '', 'Marin', 'Elvin', 'e10adc3949ba59abbe56e057f20f88', 'COS', 'MATH', 0),
 ('15-037-017', '', 'Villoria', 'Angel', 'e10adc3949ba59abbe56e057f20f883e', 'COS', 'MATH', 0),
-('15-037-003', '', 'Mangaco', 'Aeinreb', '827ccb0eea8a706c4c34a16891f84e7b', 'COE', 'MATH', 0);
+('15-037-003', '', 'Mangaco', 'Aeinreb', '827ccb0eea8a706c4c34a16891f84e7b', 'COE', 'MATH', 1),
+('15-037-007', '', 'Cueto', 'Tierce', '827ccb0eea8a706c4c34a16891f84e7b', 'COS', 'Math', 0);
 
 --
 -- Indexes for dumped tables
