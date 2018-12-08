@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class AdminController extends CI_Controller
 
 {
-
 	public function login()
 	{
 		
@@ -32,17 +31,35 @@ class AdminController extends CI_Controller
 				//set session variables
 				
 				$_SESSION['user_logged'] = TRUE;
+				
 				$_SESSION['FacultyID'] = $user->FacultyID;
+				$_SESSION['CSID'] = $user->CSID;
+				$_SESSION['LName'] = $user->LName;
+				$_SESSION['FName'] = $user->FName;
+				$_SESSION['College'] = $user->College;
+				$_SESSION['Department'] = $user->Department;
+				$_SESSION['IsAdmin'] = $user->IsAdmin;
 				
 				
 				//redirect to profile page //temporary palang itu
+				
 				$this->load->library('session');
 				$this->session->set_userdata('id', $FacultyID);
 				$this->session->set_userdata('password', $password);
-				redirect(base_url('profile'));	
 				
+					if ($_SESSION['IsAdmin'] == 0){
+					
+					
+						redirect(base_url('profile'));	
+					}
+					
+					else {
+						
+						redirect(base_url('register'));
+					}
+				}
 				
-				} else {
+				else {
 						$this->session->set_flashdata("error", 	"NO such account exists in the database.");
 						
 				//redirect back to login page 
@@ -63,8 +80,19 @@ class AdminController extends CI_Controller
 	
 	public function register()
 	{
+	
+	//to check if the user logged in or not
+	if (!isset($_SESSION['user_logged']))
+		{
+			$this->session->set_flashdata("error","Please log in first.");
+			redirect(base_url("login"));
+		}
 		
-		if(isset($_POST['addUser'])) 
+		else {
+			
+		if ($_SESSION['IsAdmin'] == 1 && isset($_SESSION)){ 
+		
+			if(isset($_POST['addUser'])) 
 		{
 			
 			$this->form_validation->set_rules('FacultyID', 'FacultyID', 'required');
@@ -99,15 +127,18 @@ class AdminController extends CI_Controller
 			}
 		}
 		
-		if(isset($_POST['addCourseSyllabus'])) 
+		if(isset($_POST['addChapter'])) 
 		{
 			
 			$this->form_validation->set_rules('CSID', 'CSID', 'required');
-			$this->form_validation->set_rules('CNum', 'CNum', 'required');
-			$this->form_validation->set_rules('CName', 'CName', 'required');
-			$this->form_validation->set_rules('TNum', 'TNum', 'required');
-			$this->form_validation->set_rules('TName', 'TName', 'required');
-			$this->form_validation->set_rules('Hours', 'Hours', 'required');
+			$this->form_validation->set_rules('CSName', 'Course Syllabus Name', 'required');
+			$this->form_validation->set_rules('ChapNum', 'Number', 'required');
+			
+			
+			
+			// $this->form_validation->set_rules('TNum', 'TNum', 'required');
+			// $this->form_validation->set_rules('TName', 'TName', 'required');
+			// $this->form_validation->set_rules('Hours', 'Hours', 'required');
 		
 			//if form validation is true
 			if	($this->form_validation->run() == TRUE) {
@@ -116,14 +147,15 @@ class AdminController extends CI_Controller
 				$data = array (
 					
 					'CSID' => $_POST['CSID'],
-					'ChapNum' => $_POST['CNum'],
-					'ChapName' => $_POST['CName'],
-					'TopicID' => $_POST['TNum'],
-					'TopicName' => $_POST['TName'],
-					'Hours' => $_POST['Hours']		
+					'CSName' => $_POST['CSName'],
+					'ChapNum' => $_POST['ChapNum'],
+					
+					// 'TopicID' => $_POST['TNum'],
+					// 'TopicName' => $_POST['TName'],
+					// 'Hours' => $_POST['Hours']		
 				
 				);
-				$this->db->insert('coursesyllabus', $data);
+				$this->db->insert('chapter', $data);
 				
 				redirect(base_url('register'));
 		
@@ -137,6 +169,14 @@ class AdminController extends CI_Controller
 		$this->load->view('includes/adminheader');
 		$this->load->view('adminside',$userdata + $csdata );
 		$this->load->view('includes/footer');
+		}
 		
-	}
+		else {
+			redirect(base_url('profile'));
+		}
 }
+}
+		
+		
+}
+
