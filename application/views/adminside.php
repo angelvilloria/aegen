@@ -228,18 +228,20 @@
   <div class="card-header">
                     
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-					       <form class="form row col-md-12">
-										<div class="form-group mb-1 col-md-3">
-                                            <label >CSID</label>
+							
+							<form method="POST" action="" class="form row col-md-12">
+										
+										<div class="form-group mb-1 col-md-3" >
+                                            <label for="CSID">CSID</label>
                                             <br>
-                                            <input type="text" class="form-control" id="csid" placeholder="Enter CSID">
+                                            <input type="text" class="form-control" name="CSID" placeholder="Enter CSID">
                                         </div>
 										<div class="form-group mb-1 col-md-9">
-                                            <label >Course Name</label>
+                                            <label for="CSName">Course Syllabus Name</label>
                                             <br>
-                                            <input type="text" class="form-control" id="chapname" placeholder="Enter Chapter Name">
+                                            <input type="text" class="form-control" name="CSName" placeholder="Enter Course Syllabus Name">
                                         </div>
-                                    </form>
+                            
                 </div>
 <br>
 <br>
@@ -247,21 +249,24 @@
 <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <form action="#" class="mt-repeater form-horizontal">
+									
+                                        <!-- <form method="POST" action="" class="mt-repeater form-horizontal"> -->
+
                                             <div data-repeater-list="group-a">
                                                 
                                             <div data-repeater-item="" class="mt-repeater-item col-md-12" style="">
                                                     <!-- jQuery Repeater Container -->
-													<div class="row">
+													
+													<div id="ChapterForm" class="row">
 													<div class="mt-repeater-inpu col-md-1">
-													 <label class="control-label">No.</label>
+													 <label class="control-label" for="ChapNum">Number</label>
 													 <br>
-													<input type="number"  class="form-control"  id="myNumber" placeholder="1">
+													<input readOnly type="number"  class="form-control"  name="ChapNum[]" placeholder="1">
                                                     </div>
                                                     <div class="mt-repeater-inpu col-md-9">
-                                                        <label class="control-label">Name</label>
+                                                        <label class="control-label" for="ChapName">Name</label>
                                                         <br>
-                                                        <input type="text" name="group-a[0][text-input]" class="form-control" placeholder="Input Chapter Name"> 
+                                                        <input type="text" name="group-a[0][text-input]" class="form-control" name="ChapName[]" placeholder="Input Chapter Name"> 
 														</div>
                                                     <div class="mt-repeater-input " style="position:absolute; right:100px;top:30px">
                                                         <a href="javascript:;" data-repeater-delete="" class="btn btn-danger mt-repeater-delete ">
@@ -270,17 +275,32 @@
                                                 </div>
 												</div>
 												</div><br>
-                                            <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+												
+                                            <a href="javascript:; " data-repeater-create="" id="addChapName" class="btn btn-success mt-repeater-add">
                                                 <i class="fa fa-plus"></i> Add</a>
-                                        </form>
+												
+												<script> 
+													$("#addChapName").unbind("click").click(function(e){
+													e.preventDefault():
+													$("#ChapterForm").append('<div class="mt-repeater-inpu col-md-1"><label class="control-label" for="ChapNum">Number</label><br><input readOnly type="number"  class="form-control"  name="ChapNum[]" placeholder="1"></div><div class="mt-repeater-inpu col-md-9"><label class="control-label" for="ChapName">Name</label><br><input type="text" name="group-a[0][text-input]" class="form-control" name="ChapName[]" placeholder="Input Chapter Name"></div><div class="mt-repeater-input " style="position:absolute; right:100px;top:30px"><a href="javascript:;" data-repeater-delete="" class="btn btn-danger mt-repeater-delete "><i class="fa fa-close"></i> Delete</a></div>');
+													});
+												</script>
+                                      
+
+										<div class="form-group col-sm-12 col-md-12 text-center mt-10" >
+										<br>
+                                            <button type="submit" class="btn btn-default col-md-3"  name="addChapter"> <i class="ft-x"></i> Submit </button>
+                                        </div>
+										
+										
+									   </form>
+									   
+						
                                     </div>
                                 </div>
                             </div>
 
-										 <div class="form-group col-sm-12 col-md-12 text-center mt-10" >
-										<br>
-                                            <button type="button" class="btn btn-default col-md-3"  > <i class="ft-x"></i> Submit</button>
-                                        </div>
+										 
 </div>
 </div>
 
