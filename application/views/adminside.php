@@ -113,18 +113,6 @@
 							<div style="color:red;"><?php echo form_error('department'); ?></div>
 							
 						</div>
-						<div class="col-md-12"> <br /></div>
-						<div class="col-md-2">
-							<label for="Department"><b>Add Course Syllabus</b></label>
-						</div>
-
-						<div class="col-md-4">
-
-						
-							<input type="text" placeholder="Enter CSID" name="csid" value="<?php echo set_value('#'); ?>">
-							<div style="color:red;"><?php echo form_error('#'); ?></div>
-							
-						</div>
 						</div>
 
 					 <br /> <br />
